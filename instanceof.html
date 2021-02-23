@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-
+  <script>
+      function Fn(name,age) {
+          this.name = name;
+          this.age = age
+      }
+      let f = new Fn('aaa',16)
+      console.log('Fn',Fn.prototype)
+      console.log('Object',Object.prototype)
+      console.log('f.__proto__',f.__proto__)
+      console.log(f instanceof Fn)
+      console.log(f.__proto__ == Fn.prototype)
+  </script>
 </body>
 </html>
