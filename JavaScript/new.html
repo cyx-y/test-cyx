@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Car() {
+            this.name='aaa';
+            return 'bbb'
+        }
+        let a = new Car()
+        console.log('a',a,a.name) // {name:bbb}
+
+        function Student() {
+            this.class=8
+            return {name:'aaa'}
+        }
+        let s = new Student()
+        console.log('s',s,s.name,s.class) // {name:aaa}  s.class为undefined
+        /*
+        * 如果构造函数内部有return,且返回的是对象,则new创建的的实例对象的值即为return的值
+        * 如果return后面是其他类型值,则new创建的对象仍然为构造的this
+        * */
+
+        function Text() {
+            console.log('new',new.target)
+            console.log('flag',new.target===Text)
+            if(!new.target) {
+                throw new Error('请使用new实例化对象')
+            }
+        }
+        Text() // 这时候 new.target为undefined
+        let t = new Text() // 这时候 new.target === Text()
+    </script>
+</body>
+</html>
