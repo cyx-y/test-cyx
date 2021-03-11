@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 面试题
+        // setTimeout(function() {
+        //     console.log(1)
+        // })
+        // new Promise(function (resolve) {
+        //     console.log(2)
+        //     for(var i = 0;i<10000;i++) {
+        //         i==9999&&resolve()
+        //     }
+        // }).then(function() {
+        //     console.log(3)
+        // })
+        // console.log(4)
+
+        // 将url中的参数改为对象形势(还可使用正则?)
+        // let str = 'http://www.baidu.com/?a=1&b=2&c=3&d=xxx'
+        // let arr1 = str.split('?')[1]
+        // let arr2 = arr1.split('&')
+        // let obj = {}
+        // arr2.forEach(item=>{
+        //     let a = item.split('=')
+        //     obj[a[0]] = a[1]
+        // })
+        // console.log(obj,'objobjobjobj')
+
+        // const str = 'https://www.bar.com/?a=1&b=2&c=3&d=xxx'
+        // const res = /(.*)\?(.*)/;
+        // console.log(str.match(res));
+
+
+        async function async1() {
+            console.log('async1 start')
+            await async2()
+            console.log('async1 end')
+        }
+        async function async2() {
+            console.log('async2')
+        }
+        console.log('script start')
+        setTimeout(function() {
+            console.log('setTimeOUt')
+        })
+        async1()
+        new Promise(function(resolve) {
+            console.log('promise1')
+            resolve()
+        }).then(function() {
+            console.log('promise2')
+        })
+        console.log('script end')
+
+    </script>
+</body>
+</html>
