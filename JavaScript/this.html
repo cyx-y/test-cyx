@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = 'bbb'
+        let obj = {name:'aaa'}
+        function Fn() {
+            // console.log(this.name)
+            return this
+        }
+        // console.log(Fn())
+        // console.log(Fn.call(obj))
+        Fn.call()
+        Fn.call(null)
+        Fn.call(undefined)
+        Fn.call(obj)
+        Fn.call(window)
+
+        function Example() {
+            console.log(this)
+        }
+        Example.call(5) // Number {5}
+        Example.call('aaa') // String {aaa}
+
+        let obj1 = {a:111,b:222}
+        let newObj = Object.defineProperty(obj1,obj1.a, {value:444,writable:true})
+        obj1.a = 333
+        console.log('obj1',obj1)
+        console.log('newObj',newObj)
+    </script>
+</body>
+</html>
