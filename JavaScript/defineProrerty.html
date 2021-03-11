@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let bValue = 25
+        let obj = {}
+        Object.defineProperty(obj,'key',{
+            enumerable:true,
+            get() {
+                return bValue
+            },
+            set(v) {
+                v = bValue
+            }
+        })
+        obj.key = 30
+        console.log(obj)
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
